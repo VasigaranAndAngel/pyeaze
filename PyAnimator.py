@@ -212,7 +212,6 @@ if __name__ == '__main__':
         anim = Animator(st, en, 1, 60, 'ease')
         for t, value in enumerate(anim):
             value = value[:-(len(value)-7)]
-            print(value)
             box.configure(fg_color=value)
             root.update()
         if not reverse: root.after(1500, button_action_color(True))
