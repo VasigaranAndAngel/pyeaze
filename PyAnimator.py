@@ -11,7 +11,7 @@ class Animator:
     def __init__(self, current_value, target_value, duration, fps, easing=None, reverse: bool = False):
         self.duration = duration
         self.fps = fps
-        self.reverse = reverse
+        self._reverse = reverse
         self.wait_time = 1 / fps
         self.value_type = None
 
@@ -111,8 +111,8 @@ class Animator:
                 values = '#' + float_to_hex(values[0]) + float_to_hex(values[1]) + float_to_hex(values[2]) + float_to_hex(values[3])
                 self.values.append(values)
 
-        if self.reverse:
-            self.values = self.values[::-1]
+        if self._reverse:
+            self.reverse()
         self.__len__()
 
     def __len__(self):
@@ -157,6 +157,9 @@ class Animator:
 
     def reset(self):
         self.frame_count = 0
+
+    def reverse(self):
+        self.values[::-1]
 
 
 # for testing purposes
