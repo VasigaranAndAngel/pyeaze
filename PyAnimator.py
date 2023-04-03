@@ -56,7 +56,7 @@ class Animator:
         if easing is None:
             self.easing = ((0, 0), (0, 0), (0, 0), (1, 1))
         elif isinstance(easing, tuple):  # looking for curve points
-            if isinstance(easing, tuple):
+            if isinstance(easing[0], tuple):
                 if len(easing) == 2:
                     self.easing = ((0, 0), easing[0], easing[1], (1, 1))
                 elif len(easing) == 4:
