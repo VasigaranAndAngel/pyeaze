@@ -7,4 +7,4 @@ Homepage: https://github.com/VasigaranAndAngel/pyeaze
 
 __version__ = '0.8'
 
-from .pyeaze import Animator
+from pyeaze import Animator
