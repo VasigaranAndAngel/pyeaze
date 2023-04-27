@@ -1,5 +1,6 @@
 import time
-from pygame import time as pygame_time
+try: from pygame import time as pygame_time
+except ImportError: pass
 
 import numpy
 from scipy.optimize import root_scalar, _zeros_py
@@ -79,15 +80,13 @@ class Animator:
 
         # set easing property
         match easing:
-            case None:
-                self.easing = ((0, 0), (0, 0), (0, 0), (1, 1))
             case ((p1, p2), (p3, p4), (p5, p6), (p7, p8)):
                 self.easing = ((p1, p2), (p3, p4), (p5, p6), (p7, p8))
             case ((p3, p4), (p5, p6)) | (p3, p4, p5, p6):
                 self.easing = ((0, 0), (p3, p4), (p5, p6), (1, 1))
             case 'ease':
                 self.easing = ((0, 0), (0.25, 0.1), (0.25, 1), (1, 1))
-            case 'linear':
+            case 'linear' | None:
                 self.easing = ((0, 0), (0, 0), (1, 1), (1, 1))
             case 'ease-in':
                 self.easing = ((0, 0), (.42, 0), (1, 1), (1, 1))
