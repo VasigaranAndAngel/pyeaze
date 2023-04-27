@@ -1,6 +1,6 @@
 # **pyeaze**
 
-**pyeaze** is a Python package for animating values with easing functions. It supports float, int, and hex color values (specified as strings), and can animate multiple values at the same time.
+**pyeaze** is a Python package for animating values with easing functions. It supports float, int, and hex color(specified as strings) values, and can animate multiple values at the same time.
 
 # Installation
 
@@ -50,7 +50,7 @@ Animator also includes the following methods:
 | --------- | --------- |
 | `.reset()` | The `reset()` method resets the frame count, so the animation starts from the beginning.
 | `.reverse()` | The `reverse()` method reverses the direction of the animation.
-| `.accurate_duration(True)` | The `accurate_duration()` method makes the duration of each frame little more accurately, but uses more resources.
+| `.accurate_duration()` | The `accurate_duration(True)` method makes the duration of each frame little more accurately, but uses more resources.
 
 # Easing Functions
 Animator uses cubic Bezier curves to define the easing function used during the animation.
@@ -78,7 +78,7 @@ Alternatively, you can also define your own custom easing functions using points
 By using cubic Bezier easing functions, Animator provides a flexible and powerful way to customize the animation's timing and transition effects.
 
 # Timing
-Because of some limitations `time.sleep` is not precise enough for smooth animations. I have tried some approaches to make this better. but no luck 😔. If anyone have any better ideas, please feel free to contribute. it's appreciate 💝.
+Because of some limitations `time.sleep` is not precise enough for smooth animations. I have tried some approaches to make this better. but no luck 😔. If anyone have any better ideas, please feel free to contribute. it's appreciated 💝.
 
 Additionally, Animator provides an `accurate_duration` parameter that can help to improve the accuracy of the animation's timing. However, as you noted, this may come at the cost of additional system resources and may not be entirely precise in all cases.
 

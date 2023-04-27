@@ -1,7 +1,4 @@
 import time
-try: from pygame import time as pygame_time
-except ImportError: pass
-
 import numpy
 from scipy.optimize import root_scalar, _zeros_py
 from typing import Union, Tuple, Literal, List, Any
@@ -31,6 +28,18 @@ class Animator:
                                     ]=None,
                        reverse: bool = False,
                        accurate_duration: bool = False,):
+        """
+        Animating values with easing functions. It supports float, int, and hex color(specified as strings) values, and can animate multiple values at the same time.
+
+        Args:
+            current_value (Union[int, float, str]): The initial value to start the animation from.
+            target_value (Union[int, float, str]): The value to animate towards.
+            duration (Union[int, float]): The duration of the animation in seconds.
+            fps (int): The number of frames per second to use when animating.
+            easing (Union[Literal[&#39;ease&#39;, &#39;linear&#39;, &#39;ease-in&#39;, &#39;ease-out&#39;, &#39;ease-in-out&#39;, optional): The easing function to use when animating. For more details https://github.com/VasigaranAndAngel/pyeaze. Defaults to None.
+            reverse (bool, optional): Reverse the direction of the animation. but will use the same easing function. Defaults to False.
+            accurate_duration (bool, optional): Method makes the duration of each frame little more accurately, but uses more resources. Defaults to False.
+        """
         
         self.duration = duration
         self.fps = fps
