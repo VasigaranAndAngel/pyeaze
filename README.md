@@ -78,12 +78,13 @@ Alternatively, you can also define your own custom easing functions using points
 By using cubic Bezier easing functions, Animator provides a flexible and powerful way to customize the animation's timing and transition effects.
 
 # Timing
-Because of some limitations `time.sleep` is not precise enough for smooth animations. I have tried some approaches to make this better. but no luck 😔. If anyone have any better ideas, please feel free to contribute. it's appreciated 💝.
+Because of some limitations `time.sleep` is not precise enough for smooth animations. I have tried some approaches to make this better. but no luck. If anyone have any better ideas, please feel free to contribute. it's appreciated 💝.
 
 Additionally, Animator provides an `accurate_duration` parameter that can help to improve the accuracy of the animation's timing. However, as you noted, this may come at the cost of additional system resources and may not be entirely precise in all cases.
 
 # Contributing
 I'm having trouble with the timing. The `time.sleep` function is not accurate enough for smooth transitions. Is there a better way to control the frame rate and the duration of each frame?
+All the instances of the pyeaze should be synced.
 
 Pull requests are welcome. For significant changes, please open an issue first
 to discuss what you would like to change.
